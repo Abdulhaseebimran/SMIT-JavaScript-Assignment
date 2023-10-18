@@ -127,7 +127,7 @@ document.write("Percentage: " + percentage + "<br>");
 var usDollar = 10;
 var saudiRiyal = 25;
 
-var totalCurrency  = usDollar * 104.80 + saudiRiyal * 28;
+var totalCurrency = usDollar * 104.80 + saudiRiyal * 28;
 
 document.write("Total Currency in PKR: " + totalCurrency + "<br>");
 
@@ -159,7 +159,7 @@ document.write("Your Age is: " + age + "<br>");
 //  a. Store a radius into a variable.
 // b. Calculate the circumference based on the radius, and output “The circumference is NN”.
 
-var radius  = 20;
+var radius = 20;
 var circumference = 2 * 3.142 * radius;
 
 document.write("<h1> The Geometrizer </h1> <br>");

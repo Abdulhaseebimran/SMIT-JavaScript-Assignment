@@ -40,10 +40,10 @@ alert("Alsalam o alaikum " + userName + " Welcome to my website");
 // should be displayed by default.
 
 var table = +prompt("Enter a number to show its multiplication table");
-if (table == ' '){
+if (table == ' ') {
     table = 5;
 }
-for(var i = 1; i<=10; i++){
+for (var i = 1; i <= 10; i++) {
     document.write(table + " x " + i + " = " + table * i + "<br>");
 }
 
