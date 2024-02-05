@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Assignment for chapter 43 - 48</title>
+    <style>
+        .mobile {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s ease-in-out all;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <a href="" onclick="displayAlert()">Click to Open a Alert Box.</a> -->
+    <div class="mobile">
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPdcZhnv6JL072NiJRGw4OjxenD5O-B-Wx1Q&usqp=CAU"
+                alt="mobile images" onclick="purchase()" onmouseover="changeImage()" onmouseout="restoreImage()">
+            <h3>Iphone 12</h3>
+        </div>
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPdcZhnv6JL072NiJRGw4OjxenD5O-B-Wx1Q&usqp=CAU"
+                alt="mobile images" onclick="purchase()" onmouseover="changeImage()" onmouseout="restoreImage()">
+            <h3>Iphone 13</h3>
+        </div>
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvv3Bq-ZyRNolON209rdcBMRu2X_KHzjWUJ6HFRFJ5YnK0o1ziI5n4c67lNQ&s"
+                alt="mobile images" onclick="purchase()" onmouseout="changeImage()">
+            <h3>Android Phone</h3>
+        </div>
+    </div>
+
+    <table id="myTable">
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Ali</td>
+            <td>10</td>
+            <td><button onclick="deleteRow(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Ahmed</td>
+            <td>9</td>
+            <td><button onclick="deleteRow(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Asad</td>
+            <td>8</td>
+            <td><button onclick="deleteRow(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Aslam</td>
+            <td>7</td>
+            <td><button onclick="deleteRow(this)">Delete</button></td>
+        </tr>
+    </table>
+
+    <div>
+        <h1>Counter App</h1>
+        <h2 id="counter-value">0</h2>
+        <button onclick="increaseCounter()" id="increaseBtn">Increase</button>
+        <button onclick="decreaseCounter()" id="decreaseBtn">Decrease</button>
+    </div>
+    <script src="./events.js"></script>
+</body>
+
+</html>
