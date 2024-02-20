@@ -1,63 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Events assignment</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <h2>Signup Form</h2>
     <form id="signupForm" onsubmit="signUp(); return false;">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br>
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required /><br />
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br>
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br />
 
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br>
+      <label for="password">Password:</label><br />
+      <input type="password" id="password" name="password" required /><br />
 
-        <label for="confirmPassword">Confirm Password:</label><br>
-        <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+      <label for="confirmPassword">Confirm Password:</label><br />
+      <input
+        type="password"
+        id="confirmPassword"
+        name="confirmPassword"
+        required
+      /><br />
 
-        <button type="submit">Sign Up</button>
+      <button type="submit">Sign Up</button>
     </form>
 
     <div id="userData"></div>
 
-     <p id="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, amet?</p>
-    <span onclick="expandText()" id="changeText">Read More!</span>
+    <p id="text">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, amet?
+    </p>
+    <span onclick="expandText()" id="changeText">Read More!</span> <br /><br />
 
-    <table>
-       <tr id="studentName">
-        <td>Name</td>
-        <td>Student</td>
-        <td>Class</td>
-        <td>Section</td>
-       </tr>       
-       <tr>
-        <td>Abdul</td>
-        <td>Yes</td>
-        <td>10</td>
-        <td>A</td>
-       </tr>
-       <tr>
-        <td>Abdul Haseeb</td>
-        <td>Yes</td>
-        <td>10</td>
-        <td>A</td>
-       </tr>
-       <tr>
-        <td>Abdullah</td>
-        <td>Yes</td>
-        <td>10</td>
-        <td>A</td>
-       </tr>
+    <h2>Add Student</h2>
+    <form id="studentForm">
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="text" id="age" placeholder="Age" required />
+      <input type="text" id="course" placeholder="Course" required />
+      <button type="submit">Add Student</button>
+    </form>
+
+    <h2>Students List</h2>
+    <table id="studentsTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Course</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
     </table>
 
-    
-    
     <script src="./chapter49-52/events2.js"></script>
-</body>
+  </body>
 </html>

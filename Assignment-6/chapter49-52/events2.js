@@ -22,74 +22,45 @@ function signUp() {
 // more” button, full detail of that particular item will be
 // displayed
 
-function expandText() {
-    let shortText = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, amet?";
-    let fullText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
-    let text = document.getElementById("text");
-    let changeText = document.getElementById("changeText");
-    if (text.innerHTML === shortText) {
-        text.innerHTML = fullText;
-        changeText.innerHTML = 'Read less';
-    } else {
-        text.innerHTML = shortText;
-        changeText.innerHTML = 'Read more';
-    }
+document.getElementById('studentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const age = document.getElementById('age').value;
+    const course = document.getElementById('course').value;
+
+    addStudentToTable(name, age, course);
+});
+
+function addStudentToTable(name, age, course) {
+    const table = document.getElementById('studentsTable').getElementsByTagName('tbody')[0];
+    const newRow = table.insertRow();
+
+    const cell1 = newRow.insertCell(0);
+    const cell2 = newRow.insertCell(1);
+    const cell3 = newRow.insertCell(2);
+    const cell4 = newRow.insertCell(3);
+
+    cell1.textContent = name;
+    cell2.textContent = age;
+    cell3.textContent = course;
+    cell4.innerHTML = '<button onclick="editStudent(this)">Edit</button> <button onclick="deleteStudent(this)">Delete</button>';
 }
 
-
-// 3. In previous assignment you have created a tabular data
-// using javascript. Let’s modify that. Create a form which
-// takes student’s details and show each student detail in
-// table. Each row of table must contain a delete button and
-// an edit button. On click on delete button entire row should
-// be deleted. On click on edit button, a hidden form will
-// appear with the values of that row.
-
-
-function addStudent() {
-    var name = document.getElementById('name').value;
-    var rollNo = document.getElementById('rollNo').value;
-    var table = document.getElementById('studentsTable');
-    var row = table.insertRow(1);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = name;
-    cell2.innerHTML = rollNo;
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    cell3.innerHTML = "<button onclick='deleteStudent(this)'>Delete</button>";
-    cell4.innerHTML = "<button onclick='editStudent(this)'>Edit</button>";
-    document.getElementById('name').value = '';
-    document.getElementById('rollNo').value = '';
+function deleteStudent(btn) {
+    const row = btn.parentNode.parentNode;
+    row.parentNode.removeChild(row);
 }
 
-function deleteStudent(e) {
-    e.parentNode.parentNode.remove();
-}
+function editStudent(btn) {
+    const row = btn.parentNode.parentNode;
+    const cells = row.getElementsByTagName('td');
 
-function editStudent(e) {
-    var name = e.parentNode.parentNode.firstChild.innerHTML;
-    var rollNo = e.parentNode.parentNode.firstChild.nextSibling.innerHTML;
-    document.getElementById('editName').value = name;
-    document.getElementById('editRollNo').value = rollNo;
-    document.getElementById('editForm').style.display = 'block';
-    e.parentNode.parentNode.remove();
-}
+    const name = cells[0].textContent;
+    const age = cells[1].textContent;
+    const course = cells[2].textContent;
 
-function updateStudent() {
-    var name = document.getElementById('editName').value;
-    var rollNo = document.getElementById('editRollNo').value;
-    var table = document.getElementById('studentsTable');
-    var row = table.insertRow(1);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = name;
-    cell2.innerHTML = rollNo;
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    cell3.innerHTML = "<button onclick='deleteStudent(this)'>Delete</button>";
-    cell4.innerHTML = "<button onclick='editStudent(this)'>Edit</button>";
-    document.getElementById('editForm').style.display = 'none';
-    document.getElementById('editName').value = '';
-    document.getElementById('editRollNo').value = '';
+    document.getElementById('name').value = name;
+    document.getElementById('age').value = age;
+    document.getElementById('course').value = course;
 }
